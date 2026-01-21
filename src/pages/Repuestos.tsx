@@ -9,25 +9,39 @@ export default function Repuestos() {
 
   const repuestos = [
     {
-      imagen: '/repuestos-originales-armonia/9.jpg',
-      alt: 'Ruedas para cama de pilates',
-      titulo: 'Ruedas para cama de pilates',
-      descripcion: 'Ruedas cónicas con rulemanes de alta calidad. Deslizamiento suave y silencioso para uso intensivo. Fabricadas con materiales de primera calidad que garantizan durabilidad.',
-      caracteristicas: ['Rulemanes de alta calidad', 'Deslizamiento silencioso', 'Uso intensivo']
+      imagen: '/repuestos-originales-armonia/manillares_front.jpg',
+      alt: 'Manillares roscados',
+      titulo: 'Manillares roscados',
+      descripcion: 'Manillares roscados de alta calidad con terminación profesional. Diseño ergonómico para mayor comodidad durante los ejercicios. Fabricados con materiales de primera calidad.',
+      caracteristicas: ['Terminación profesional', 'Diseño ergonómico', 'Alta durabilidad']
     },
     {
-      imagen: '/repuestos-originales-armonia/7-fcd347741695c75a1717117195013812-1024-1024.jpg',
-      alt: 'Juegos de resortes',
-      titulo: 'Juegos de resortes',
+      imagen: '/repuestos-originales-armonia/28.jpg',
+      alt: 'Juego de resortes',
+      titulo: 'Juego de resortes',
       descripcion: 'Resortes originales en diferentes resistencias. Stock permanente de todos los colores: rojo, azul, verde y amarillo. Fabricados según especificaciones originales.',
       caracteristicas: ['Stock permanente', 'Todas las resistencias', 'Especificaciones originales']
     },
     {
-      imagen: '/repuestos-originales-armonia/1.png',
-      alt: 'Repuestos originales Armonía',
-      titulo: 'Repuestos originales Armonía',
-      descripcion: 'Amplio catálogo de repuestos fabricados por nosotros. Garantía de compatibilidad y calidad. Desde sogas náuticas hasta motones y mordazas profesionales.',
-      caracteristicas: ['Fabricación propia', 'Garantía de compatibilidad', 'Catálogo completo']
+      imagen: '/repuestos-originales-armonia/front_armonia_(1).jpg',
+      alt: 'Regulador de 4 posiciones',
+      titulo: 'Regulador de 4 posiciones',
+      descripcion: 'Sistema de regulación de alta precisión con 4 posiciones. Fabricado en acero de primera calidad con herrajes incluidos. Instalación sencilla y ajuste perfecto.',
+      caracteristicas: ['4 posiciones', 'Acero de calidad', 'Herrajes incluidos']
+    },
+    {
+      imagen: '/repuestos-originales-armonia/13.jpg',
+      alt: 'Rueda para reformer',
+      titulo: 'Rueda para reformer',
+      descripcion: 'Ruedas cónicas con rulemanes de alta calidad. Deslizamiento suave y silencioso para uso intensivo. Fabricadas con materiales de primera calidad que garantizan durabilidad.',
+      caracteristicas: ['Rulemanes de alta calidad', 'Deslizamiento silencioso', 'Uso intensivo']
+    },
+    {
+      imagen: '/repuestos-originales-armonia/front_armonia_(2).jpg',
+      alt: 'Par de soportes metálicos para hombreras',
+      titulo: 'Par de soportes metálicos para hombreras',
+      descripcion: 'Soportes metálicos de alta resistencia diseñados para hombreras. Incluyen herrajes de fijación. Fabricación robusta para uso profesional intensivo.',
+      caracteristicas: ['Alta resistencia', 'Herrajes incluidos', 'Uso profesional']
     }
   ];
 
