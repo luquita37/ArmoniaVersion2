@@ -9,32 +9,25 @@ export default function Accesorios() {
 
   const accesorios = [
     {
-      imagen: '/2.png',
-      alt: 'Tabla de salto',
-      titulo: 'Tabla de salto',
-      descripcion: 'Accesorio fundamental para trabajos de salto y equilibrio. Fabricada con materiales de primera calidad, estructura reforzada y acabado profesional para uso intensivo.',
-      caracteristicas: ['Material de primera calidad', 'Estructura reforzada', 'Acabado profesional']
-    },
-    {
-      imagen: '/3.png',
-      alt: 'Box para pilates',
-      titulo: 'Box para pilates',
-      descripcion: 'Box profesional para diversificar ejercicios. Estructura reforzada para uso intensivo, tapizado premium y manijas laterales para fácil transporte.',
-      caracteristicas: ['Uso intensivo', 'Tapizado premium', 'Manijas laterales']
-    },
-    {
-      imagen: '/4.png',
+      imagen: '/1_(3).jpg',
       alt: 'Tabla de extensión',
       titulo: 'Tabla de extensión',
       descripcion: 'Amplia las posibilidades de ejercicios. Diseño ergonómico y terminación profesional que complementa perfectamente tu reformer.',
       caracteristicas: ['Diseño ergonómico', 'Terminación profesional', 'Compatible con todos los modelos']
     },
     {
-      imagen: '/5.png',
-      alt: 'Medio trapecio cromado',
-      titulo: 'Medio trapecio cromado',
-      descripcion: 'Sistema de poleas adicional para ejercicios avanzados. Terminación cromada de alta durabilidad, instalación sencilla y compatible con todos nuestros reformers.',
-      caracteristicas: ['Terminación cromada', 'Alta durabilidad', 'Instalación sencilla']
+      imagen: '/3_(3).jpg',
+      alt: 'Box para pilates',
+      titulo: 'Box',
+      descripcion: 'Box profesional para diversificar ejercicios. Estructura reforzada para uso intensivo, tapizado premium y manijas laterales para fácil transporte.',
+      caracteristicas: ['Uso intensivo', 'Tapizado premium', 'Manijas laterales']
+    },
+    {
+      imagen: '/front_armonia_(5).jpg',
+      alt: 'Tabla de pique',
+      titulo: 'Tabla de pique',
+      descripcion: 'Accesorio profesional para ejercicios específicos de pilates. Fabricada con materiales de primera calidad y diseño anatómico para máximo confort.',
+      caracteristicas: ['Material de primera calidad', 'Diseño anatómico', 'Acabado profesional']
     }
   ];
 
