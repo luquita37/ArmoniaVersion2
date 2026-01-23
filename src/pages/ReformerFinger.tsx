@@ -36,7 +36,7 @@ export default function ReformerFinger() {
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-8 shadow-lg" style={{ backgroundColor: '#d4a574' }}>
             <Clock size={24} style={{ color: '#3a2f25' }} />
             <span className="text-lg font-medium" style={{ color: '#3a2f25' }}>
-              PLAZO DE ENTREGA: PRINCIPIO DE FEBRERO
+              PLAZO DE ENTREGA: 50 DÍAS
             </span>
           </div>
 
