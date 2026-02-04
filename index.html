@@ -22,13 +22,12 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Armonía Pilates Landing Page</title>
+  <title>Armonía Pilates Landing Page</title>
 
     <meta property="og:image" content="https://bolt.new/static/og_default.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
 
-    <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s){
         if(f.fbq)return;
@@ -47,7 +46,32 @@
       fbq('init', '854235084006043');
       fbq('track', 'PageView');
     </script>
-    <!-- End Meta Pixel Code -->
+    <script>
+      (function() {
+        var eventFired = false; // Bandera para asegurar que solo se dispare una vez
+
+        window.addEventListener('scroll', function() {
+          if (eventFired) return; // Si ya se disparó, no hacer nada
+
+          // Calcular altura total del documento y altura de la ventana
+          var docHeight = document.documentElement.scrollHeight;
+          var winHeight = window.innerHeight;
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+          // Calcular porcentaje (evitar división por cero si la página no tiene scroll)
+          var scrollableHeight = docHeight - winHeight;
+          if (scrollableHeight <= 0) return;
+
+          var scrollPercent = (scrollTop / scrollableHeight) * 100;
+
+          // Si el porcentaje es mayor o igual al 50%
+          if (scrollPercent >= 50) {
+            fbq('track', 'ViewContent'); // Dispara el evento a Meta
+            eventFired = true; // Marca como disparado
+          }
+        });
+      })();
+  </script>
 
   </head>
   <body>
