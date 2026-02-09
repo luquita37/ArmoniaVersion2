@@ -104,50 +104,51 @@ export default function Home() {
         </div>
       </section>
 
-     <section className="py-32" style={{ backgroundColor: '#f8f5f2' }}>
-  <div className="max-w-6xl mx-auto px-6">
-    <h2 className="text-2xl font-light mb-4" style={{ color: '#7b4b23' }}>
-      En acción
-    </h2>
-    <p className="text-gray-600 mb-24 font-light">
-      Videos técnicos mostrando estructura, movimiento y terminaciones
-    </p>
+      <section className="py-32" style={{ backgroundColor: '#f8f5f2' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl font-light mb-4" style={{ color: '#7b4b23' }}>
+            En acción
+          </h2>
+          <p className="text-gray-600 mb-24 font-light">
+            Videos técnicos mostrando estructura, movimiento y terminaciones
+          </p>
 
-    <div className="grid md:grid-cols-2 gap-16">
-      {/* Video 1 - Reformer Finger */}
-      <div>
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 flex justify-center">
-          <video
-            src="/reformer-finger.mp4"
-            controls
-            playsInline
-            preload="metadata"
-            className="w-full max-w-[360px] aspect-[9/16] object-cover"
-          />
-        </div>
-        <h3 className="text-xl font-light text-center" style={{ color: '#7b4b23' }}>
-          Reformer Finger
-        </h3>
-      </div>
+          <div className="grid md:grid-cols-2 gap-16">
+            {/* Video 1 - Reformer Finger (Youtube) */}
+            <div>
+              <div className="bg-white rounded-2xl overflow-hidden mb-6 flex justify-center">
+                <iframe 
+                  src="https://www.youtube.com/embed/Nxv6i8ga50E" 
+                  title="Reformer Finger"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowFullScreen
+                  className="w-full max-w-[360px] aspect-[9/16]"
+                  frameBorder="0"
+                ></iframe>
+              </div>
+              <h3 className="text-xl font-light text-center" style={{ color: '#7b4b23' }}>
+                Reformer Finger
+              </h3>
+            </div>
 
-      {/* Video 2 - Reformer Premium */}
-      <div>
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 flex justify-center">
-          <video
-            src="/reformer-premium-guatambu.mp4"
-            controls
-            playsInline
-            preload="metadata"
-            className="w-full max-w-[360px] aspect-[9/16] object-cover"
-          />
+            {/* Video 2 - Reformer Premium (Local) */}
+            <div>
+              <div className="bg-white rounded-2xl overflow-hidden mb-6 flex justify-center">
+                <video
+                  src="/reformer-premium-guatambu.mp4"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full max-w-[360px] aspect-[9/16] object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-light text-center" style={{ color: '#7b4b23' }}>
+                Reformer Premium Guatambú
+              </h3>
+            </div>
+          </div>
         </div>
-        <h3 className="text-xl font-light text-center" style={{ color: '#7b4b23' }}>
-          Reformer Premium Guatambú
-        </h3>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <section className="py-32 bg-white">
         <div className="max-w-5xl mx-auto px-6">
