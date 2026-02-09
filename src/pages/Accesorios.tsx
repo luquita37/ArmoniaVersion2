@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, MessageCircle, Award, TrendingUp, Wrench, Sh
 import Testimonials from '../components/Testimonials';
 
 export default function Accesorios() {
-  const whatsappNumber = '543492271506';
+  const whatsappNumber = '5493492271506';
   const whatsappMessage = encodeURIComponent('Hola! Me interesan los accesorios profesionales Armonía. ¿Podrían darme más información?');
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
