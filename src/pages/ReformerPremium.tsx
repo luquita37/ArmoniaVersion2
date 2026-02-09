@@ -2,7 +2,7 @@ import { MessageCircle, Award, TrendingUp, Wrench, GraduationCap, Zap, Heart, Wi
 import Testimonials from '../components/Testimonials';
 
 export default function ReformerPremium() {
-  const whatsappNumber = '543492271506';
+  const whatsappNumber = '5493492271506';
   const whatsappMessage = encodeURIComponent('Hola! Quiero mi Reformer Armonía Premium Guatambú. ¿Podrían darme más información?');
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
