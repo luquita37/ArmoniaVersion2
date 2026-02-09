@@ -2,7 +2,7 @@ import { MessageCircle } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
 
 export default function Home() {
-  const whatsappNumber = '5491234567890';
+  const whatsappNumber = '5493492271506';
   const whatsappMessage = encodeURIComponent('Hola! Me interesa conocer más sobre el equipamiento profesional Armonía para mi estudio de pilates.');
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
