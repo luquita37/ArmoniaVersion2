@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react';
 import { MessageCircle } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
 
@@ -5,6 +6,39 @@ export default function Home() {
   const whatsappNumber = '5493492271506';
   const whatsappMessage = encodeURIComponent('Hola! Me interesa conocer más sobre el equipamiento profesional Armonía para mi estudio de pilates.');
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+  // Lógica para el video automático
+  const videoContainerRef = useRef(null);
+  const [playVideo, setPlayVideo] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        // Si el video es visible al 40%, activa la reproducción
+        if (entry.isIntersecting) {
+          setPlayVideo(true);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (videoContainerRef.current) {
+      observer.observe(videoContainerRef.current);
+    }
+
+    return () => {
+      if (videoContainerRef.current) {
+        observer.unobserve(videoContainerRef.current);
+      }
+    };
+  }, []);
+
+  // URL con parámetros de limpieza y autoplay
+  // mute=1 es OBLIGATORIO para que funcione el autoplay en navegadores modernos
+  const youtubeUrl = playVideo 
+    ? "https://www.youtube.com/embed/Nxv6i8ga50E?autoplay=1&mute=1&modestbranding=1&controls=0&rel=0&showinfo=0"
+    : "https://www.youtube.com/embed/Nxv6i8ga50E?mute=1&modestbranding=1&controls=0&rel=0&showinfo=0";
 
   return (
     <>
@@ -115,15 +149,16 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-16">
             {/* Video 1 - Reformer Finger (Youtube) */}
-            <div>
+            <div ref={videoContainerRef}>
               <div className="bg-white rounded-2xl overflow-hidden mb-6 flex justify-center">
                 <iframe 
-                  src="https://www.youtube.com/embed/Nxv6i8ga50E" 
+                  src={youtubeUrl}
                   title="Reformer Finger"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   allowFullScreen
-                  className="w-full max-w-[360px] aspect-[9/16]"
+                  className="w-full max-w-[360px] aspect-[9/16] pointer-events-none"
                   frameBorder="0"
+                  style={{ pointerEvents: 'none' }} // Esto evita clics accidentales ya que no hay controles
                 ></iframe>
               </div>
               <h3 className="text-xl font-light text-center" style={{ color: '#7b4b23' }}>
