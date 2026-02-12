@@ -15,12 +15,11 @@ export default function Home() {
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        // Si el video es visible al 40%, activa la reproducción
         if (entry.isIntersecting) {
           setPlayVideo(true);
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 } // Se activa cuando el 40% del video es visible
     );
 
     if (videoContainerRef.current) {
@@ -34,11 +33,12 @@ export default function Home() {
     };
   }, []);
 
-  // URL con parámetros de limpieza y autoplay
-  // mute=1 es OBLIGATORIO para que funcione el autoplay en navegadores modernos
+  // URL MODIFICADA:
+  // controls=1: Permite al usuario pausar y subir volumen.
+  // showinfo=0 y modestbranding=1: Tratan de reducir los logos lo máximo posible.
   const youtubeUrl = playVideo 
-    ? "https://www.youtube.com/embed/Nxv6i8ga50E?autoplay=1&mute=1&modestbranding=1&controls=1&rel=0&showinfo=0"
-    : "https://www.youtube.com/embed/Nxv6i8ga50E?mute=1&modestbranding=1&controls=0&rel=0&showinfo=0";
+    ? "https://www.youtube.com/embed/Nxv6i8ga50E?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0"
+    : "https://www.youtube.com/embed/Nxv6i8ga50E?mute=1&controls=1&modestbranding=1&rel=0&showinfo=0";
 
   return (
     <>
@@ -156,9 +156,9 @@ export default function Home() {
                   title="Reformer Finger"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   allowFullScreen
-                  className="w-full max-w-[360px] aspect-[9/16] pointer-events-none"
+                  // Se eliminó 'pointer-events-none' para permitir clicks
+                  className="w-full max-w-[360px] aspect-[9/16]"
                   frameBorder="0"
-                  style={{ pointerEvents: 'none' }} // Esto evita clics accidentales ya que no hay controles
                 ></iframe>
               </div>
               <h3 className="text-xl font-light text-center" style={{ color: '#7b4b23' }}>
