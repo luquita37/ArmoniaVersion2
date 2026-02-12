@@ -37,7 +37,7 @@ export default function Home() {
   // URL con parámetros de limpieza y autoplay
   // mute=1 es OBLIGATORIO para que funcione el autoplay en navegadores modernos
   const youtubeUrl = playVideo 
-    ? "https://www.youtube.com/embed/Nxv6i8ga50E?autoplay=1&mute=1&modestbranding=1&controls=0&rel=0&showinfo=0"
+    ? "https://www.youtube.com/embed/Nxv6i8ga50E?autoplay=1&mute=1&modestbranding=1&controls=1&rel=0&showinfo=0"
     : "https://www.youtube.com/embed/Nxv6i8ga50E?mute=1&modestbranding=1&controls=0&rel=0&showinfo=0";
 
   return (
