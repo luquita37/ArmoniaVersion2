@@ -7,17 +7,28 @@ export default function Home() {
   const whatsappMessage = encodeURIComponent('Hola! Me interesa conocer más sobre el equipamiento profesional Armonía para mi estudio de pilates.');
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-  // Lógica para el video automático
+  // Lógica para el video automático 1
   const videoContainerRef = useRef(null);
   const [playVideo, setPlayVideo] = useState(false);
+
+  // Lógica para el video automático 2 (NUEVO)
+  const videoContainerRef2 = useRef(null);
+  const [playVideo2, setPlayVideo2] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setPlayVideo(true);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Chequeamos qué video entró en pantalla
+            if (entry.target === videoContainerRef.current) {
+              setPlayVideo(true);
+            }
+            if (entry.target === videoContainerRef2.current) {
+              setPlayVideo2(true);
+            }
+          }
+        });
       },
       { threshold: 0.4 } // Se activa cuando el 40% del video es visible
     );
@@ -25,20 +36,24 @@ export default function Home() {
     if (videoContainerRef.current) {
       observer.observe(videoContainerRef.current);
     }
+    if (videoContainerRef2.current) {
+      observer.observe(videoContainerRef2.current);
+    }
 
     return () => {
-      if (videoContainerRef.current) {
-        observer.unobserve(videoContainerRef.current);
-      }
+      observer.disconnect();
     };
   }, []);
 
-  // URL MODIFICADA:
-  // controls=1: Permite al usuario pausar y subir volumen.
-  // showinfo=0 y modestbranding=1: Tratan de reducir los logos lo máximo posible.
+  // URL VIDEO 1 (Reformer Finger)
   const youtubeUrl = playVideo 
     ? "https://www.youtube.com/embed/Nxv6i8ga50E?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0"
     : "https://www.youtube.com/embed/Nxv6i8ga50E?mute=1&controls=1&modestbranding=1&rel=0&showinfo=0";
+
+  // URL VIDEO 2 (Reformer Premium - NUEVO)
+  const youtubeUrl2 = playVideo2 
+    ? "https://www.youtube.com/embed/qSFNePFzeZ8?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0"
+    : "https://www.youtube.com/embed/qSFNePFzeZ8?mute=1&controls=1&modestbranding=1&rel=0&showinfo=0";
 
   return (
     <>
@@ -156,7 +171,6 @@ export default function Home() {
                   title="Reformer Finger"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   allowFullScreen
-                  // Se eliminó 'pointer-events-none' para permitir clicks
                   className="w-full max-w-[360px] aspect-[9/16]"
                   frameBorder="0"
                 ></iframe>
@@ -166,16 +180,17 @@ export default function Home() {
               </h3>
             </div>
 
-            {/* Video 2 - Reformer Premium (Local) */}
-            <div>
+            {/* Video 2 - Reformer Premium (AHORA YOUTUBE) */}
+            <div ref={videoContainerRef2}>
               <div className="bg-white rounded-2xl overflow-hidden mb-6 flex justify-center">
-                <video
-                  src="/reformer-premium-guatambu.mp4"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="w-full max-w-[360px] aspect-[9/16] object-cover"
-                />
+                <iframe 
+                  src={youtubeUrl2}
+                  title="Reformer Premium Guatambú"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowFullScreen
+                  className="w-full max-w-[360px] aspect-[9/16]"
+                  frameBorder="0"
+                ></iframe>
               </div>
               <h3 className="text-xl font-light text-center" style={{ color: '#7b4b23' }}>
                 Reformer Premium Guatambú
