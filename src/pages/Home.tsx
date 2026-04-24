@@ -46,12 +46,12 @@ export default function Home() {
   }, []);
 
   // URL VIDEO 1 (Reformer Finger)
-  const youtubeUrl = playVideo 
+  const youtubeUrl = playVideo
     ? "https://www.youtube.com/embed/Nxv6i8ga50E?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0"
     : "https://www.youtube.com/embed/Nxv6i8ga50E?mute=1&controls=1&modestbranding=1&rel=0&showinfo=0";
 
   // URL VIDEO 2 (Reformer Premium - NUEVO)
-  const youtubeUrl2 = playVideo2 
+  const youtubeUrl2 = playVideo2
     ? "https://www.youtube.com/embed/qSFNePFzeZ8?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0"
     : "https://www.youtube.com/embed/qSFNePFzeZ8?mute=1&controls=1&modestbranding=1&rel=0&showinfo=0";
 
@@ -80,6 +80,18 @@ export default function Home() {
 
       <section className="py-32 bg-white">
         <div className="max-w-5xl mx-auto px-6">
+          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video w-full mb-24 md:mb-32">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/JY43Z6cIEVk?si=mgW61ZtJOeSEuHOy"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-24">
             <div>
               <h2 className="text-3xl md:text-4xl font-light mb-8" style={{ color: '#7b4b23' }}>
@@ -166,10 +178,10 @@ export default function Home() {
             {/* Video 1 - Reformer Finger (Youtube) */}
             <div ref={videoContainerRef}>
               <div className="bg-white rounded-2xl overflow-hidden mb-6 flex justify-center">
-                <iframe 
+                <iframe
                   src={youtubeUrl}
                   title="Reformer Finger"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="w-full max-w-[360px] aspect-[9/16]"
                   frameBorder="0"
@@ -183,10 +195,10 @@ export default function Home() {
             {/* Video 2 - Reformer Premium (AHORA YOUTUBE) */}
             <div ref={videoContainerRef2}>
               <div className="bg-white rounded-2xl overflow-hidden mb-6 flex justify-center">
-                <iframe 
+                <iframe
                   src={youtubeUrl2}
                   title="Reformer Premium Guatambú"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="w-full max-w-[360px] aspect-[9/16]"
                   frameBorder="0"
