@@ -1,9 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
-// commit
+
 export default function Home() {
   const whatsappNumber = '5493492271506';
+
+  const heroImages = [
+    '/Hero-images/IMG_0222 (1).JPG.jpeg',
+    '/Hero-images/IMG_3127-Recuperado (5).png'
+  ];
+  const [currentHeroImage, setCurrentHeroImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
   const whatsappMessage = encodeURIComponent('Hola! Me interesa conocer más sobre el equipamiento profesional Armonía para mi estudio de pilates.');
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -57,20 +70,35 @@ export default function Home() {
 
   return (
     <>
-      <section className="py-32 md:py-48" style={{ backgroundColor: '#f8f5f2' }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <h1 className="text-5xl md:text-7xl font-light mb-8 leading-tight tracking-tight" style={{ color: '#7b4b23' }}>
+      <section className="relative py-32 md:py-48 flex items-center justify-center min-h-[85vh] overflow-hidden">
+        {heroImages.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentHeroImage ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={src}
+              alt="Equipamiento Pilates"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50"></div>
+          </div>
+        ))}
+        
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-7xl font-light mb-8 leading-tight tracking-tight text-white drop-shadow-md">
             Equipamiento profesional para estudios de pilates
           </h1>
-          <p className="text-xl md:text-2xl mb-16 max-w-3xl text-gray-600 font-light leading-relaxed">
+          <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-white/90 font-light leading-relaxed drop-shadow-md">
             Fabricación nacional. Más de 20 años de experiencia. Solución integral con respaldo real.
           </p>
           <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 text-base border-2 rounded-full transition-all hover:opacity-80"
-            style={{ borderColor: '#7b4b23', color: '#7b4b23' }}
+            className="inline-flex items-center gap-3 px-8 py-4 text-base border border-white text-white rounded-full transition-all hover:bg-white hover:text-black backdrop-blur-sm bg-white/10"
           >
             <MessageCircle size={20} />
             Consultar por WhatsApp
