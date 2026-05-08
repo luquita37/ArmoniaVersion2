@@ -142,6 +142,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-32 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video w-full">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/0z-nSEs2eDs?si=6l3jSJDHOXg8a9J2"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       <section className="py-32" style={{ backgroundColor: '#7b4b23' }}>
         <div className="max-w-5xl mx-auto px-6 text-white">
           <h2 className="text-3xl md:text-4xl font-light mb-8 max-w-2xl">
