@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
-
+// commit
 export default function Home() {
   const whatsappNumber = '5493492271506';
   const whatsappMessage = encodeURIComponent('Hola! Me interesa conocer más sobre el equipamiento profesional Armonía para mi estudio de pilates.');
